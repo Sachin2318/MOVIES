@@ -1,0 +1,214 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;900&display=swap'); */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap");
+@import url("./form.module.css");
+@import url("./footer.module.css");
+@import url("./custom.css");
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: var(--light);
+  font-family: "Lato", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+:root {
+  --scale: 1;
+  --rich-black-fogra-29: hsla(207, 95%, 8%, 1);
+  --baby-powder: hsla(100, 100%, 99%, 1);
+  --tiffany-blue: hsla(174, 62%, 47%, 1);
+  --rose-madder: hsla(353, 81%, 51%, 1);
+  --orange-peel: hsla(35, 100%, 55%, 1);
+  --dark: var(--rich-black-fogra-29);
+  --light: var(--baby-powder);
+}
+.listImage {
+  width: 80px !important;
+  height: 100px !important;
+}
+
+.grid {
+  position: relative;
+  margin: 0;
+  margin-top: 1rem;
+  display: grid;
+  gap: 2rem;
+  max-width: 100vw;
+  min-height: 40vh;
+  grid-template-columns: repeat(auto-fit, 250px);
+  grid-auto-rows: max-content;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.genres {
+  padding: 5px;
+  width: 80%;
+  text-align: center;
+}
+.genre {
+  margin: 3px !important;
+}
+.filters {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  /* align-items: flex-end; */
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.sortBy {
+  max-width: 100%;
+}
+.sortByField {
+  width: 200px;
+}
+.ratings {
+  max-width: 80%;
+  min-width: 50%;
+  flex-basis: 500px;
+}
+/* .rating .form {
+	max-width: 90vw;
+	overflow: hidden;
+} */
+button {
+  padding: 10px;
+  cursor: pointer;
+  margin: 5px;
+  background: var(--light);
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.38);
+
+  border: none;
+  border-radius: 10px;
+}
+button:hover {
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.38);
+}
+button:disabled {
+  box-shadow: none;
+}
+.loading_img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fcfffa;
+  background-image: -webkit-linear-gradient(45deg, #fcfffa 0%, #2ec2b3 100%);
+  background-image: -moz-linear-gradient(45deg, #fcfffa 0%, #2ec2b3 100%);
+  background-image: -o-linear-gradient(45deg, #fcfffa 0%, #2ec2b3 100%);
+  background-image: linear-gradient(45deg, #fcfffa 0%, #2ec2b3 100%);
+}
+.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: rgba(0, 0, 0, 0.726); */
+  z-index: 10;
+}
+.loading span {
+  background: rgb(17, 17, 17);
+  position: relative;
+  left: 45%;
+  top: 100px;
+  width: 100px;
+  height: 100px;
+  display: block;
+  border-radius: 50%;
+
+  animation: pulse 0.3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  transform-origin: center;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 0.2;
+
+    transform: scale(2);
+  }
+}
+.ReactModal__Overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  z-index: 10;
+  transition: all 0.5s ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+.ReactModal__Content {
+  width: fit-content;
+  height: fit-content;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.ReactModal__Content--after-open {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.header {
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  width: 100%;
+  z-index: 9;
+  height: 80px;
+  backdrop-filter: blur(9px);
+  padding: 25px;
+}
+.main-child {
+  /* padding: 6rem 0; */
+  padding: 6rem 2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #eeeeee;
+  /* background-color: #24262b; */
+  /* background-color: #B0B2BF; */
+}
+.logo {
+  background: transparent;
+  display: flex;
+  width: 122px;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: rgb(61, 126, 255);
+  align-items: center;
+  cursor: pointer;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
